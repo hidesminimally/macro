@@ -41,12 +41,13 @@
 
  <p>
 
-{{item.get_name() }}<br>
+<strong><h5>{{item.get_id()}}. {{item.get_name() }}</h5></strong>
 
-  Total Fat: {{item.get_fat()}}<br>
-  Total Carb: {{item.get_carbs()}}<br>
-  Protein: {{item.get_protein()}}<br>
-  Calories: {{item.get_calorie()}}
+  <h6  class = "subheader"> Total Fat: {{item.get_fat()}}</h6>
+
+  <h6  class = "subheader"> Total Carb:  {{item.get_carbs()}}</h6> 
+  <h6  class = "subheader">Protein:{{item.get_protein()}}</h6> 
+  <h6  class = "subheader">Calories:  {{item.get_calorie()}}</h6>
 
   <!-- Subtrac Function  -->
   <button class="tiny round alert button" onclick="function subNutrients(){

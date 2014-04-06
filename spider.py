@@ -41,7 +41,8 @@ def run():
 						#visited.append(link['href'])
 				#information = parser.nutrition_parse(link['href'])
 				foodlist.append(parser.create_food(link['href']))
-				dictFood[foodlist[i].get_name()] = [foodlist[i].get_fat(), foodlist[i].get_carbs(), foodlist[i].get_protein(), foodlist[i].get_calorie()]
+				#dictFood[foodlist[i].get_name()] = [foodlist[i].get_fat(), foodlist[i].get_carbs(), foodlist[i].get_protein(), foodlist[i].get_calorie()]
+				foodlist[i].id = i
 				i+= 1 
 				#calorie_text.append(information[0])
 				#nutrition[information[0]] = (information[1],information[2])
@@ -49,7 +50,7 @@ def run():
 						#parser.nutrition_parse currently parses the calories
 
 
-	return (foodlist, dictFood)
+	return foodlist
 
 
 

@@ -8,8 +8,7 @@ app = Flask(__name__)
 @app.route('/')
 def index():
 
-	foods = spider.run()
-	foodlist = foods[0]
+	foodlist = spider.run()
 	foodnames = []
 	for food in foodlist:
 		foodnames.append(food.get_name())

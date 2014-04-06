@@ -128,21 +128,21 @@ function addOne() {
 
 
 function updateMytotalFat() {
-  document.getElementById( 'totalFat' ).innerHTML = 'TotalFat = '+ totalFat;
+  document.getElementById( 'totalFat' ).innerHTML = 'Total Fat = '+ totalFat;
 
 }
 function updateMytotalProtein(){
-  document.getElementById( 'totalProtein' ).innerHTML = 'Totalprotein = ' + totalProtein; 
+  document.getElementById( 'totalProtein' ).innerHTML = 'Total Protein = ' + totalProtein; 
 }
 
 
 
 function updateMytotalCarb() {
-  document.getElementById( 'totalCarb' ).innerHTML = 'TotalCarb= '+ totalCarb;
+  document.getElementById( 'totalCarb' ).innerHTML = 'Total Carbs = '+ totalCarb;
 }
 
 function updateMytotalCalories() {
-  document.getElementById( 'totalCalories' ).innerHTML = 'TotalCalories= '+ totalCalories;
+  document.getElementById( 'totalCalories' ).innerHTML = 'Total Calories = '+ totalCalories;
 }
 
 
@@ -152,10 +152,13 @@ function resetAll(){
   totalProtein = 0; 
   totalCalories =0;
   totalCarb =0;
- document.getElementById( 'totalFat' ).innerHTML = 'updatetotalFat = '+ totalFat;
-  document.getElementById( 'totalProtein' ).innerHTML = 'updatetotalprotein = ' + totalProtein; 
- document.getElementById( 'totalCarb' ).innerHTML = 'updatetotalCarb= '+ totalCarb;
-  document.getElementById( 'totalCalories' ).innerHTML = 'updatedtotalCALORIES= '+ totalCalories;
+  foodcount = 0
+ document.getElementById( 'totalFat' ).innerHTML = 'Total Fat = '+ totalFat;
+  document.getElementById( 'totalProtein' ).innerHTML = 'Total Protein = ' + totalProtein; 
+ document.getElementById( 'totalCarb' ).innerHTML = 'Total Carbs = '+ totalCarb;
+  document.getElementById( 'totalCalories' ).innerHTML = 'Total Calories = '+ totalCalories;
+  var x = document.getElementById("basket");
+  x.innerHTML =  "None"
 }
 
 function addToBasket()

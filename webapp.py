@@ -5,6 +5,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
+	fooddict = {}
 	foods = spider.run()
 	foodlist = foods[0]
 	dictionary = foods[1]

@@ -12,6 +12,7 @@ class Food:
 		self.carbp = convertToFloat2(carbp)
 		self.protein = convertToFloat(protein)
 		self.calorie = convertToFloat2(calorie)
+		self.id = -1
 
 
 
@@ -34,6 +35,8 @@ class Food:
 		return self.protein
 	def get_calorie(self):
 		return self.calorie
+	def get_id(self):
+		return self.id
 
 
 

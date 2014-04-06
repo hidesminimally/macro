@@ -24,7 +24,8 @@ class Food:
 			print("UNICODE ERROR")
 			return "error"
 
-
+	def get_name(self):
+		return self.name
 	def get_fat(self):
 		return self.fat
 	def get_carbs(self):

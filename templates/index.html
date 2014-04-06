@@ -1,4 +1,18 @@
-<html>
-<h> MACROS </h>
-{{ foodlist }}
-</html>
+{% extends "master.html" %}
+
+{% block title %}Macros{% endblock %}
+
+{% block body %}
+
+
+
+{% for row_index in range(fooddict['food']|count) %}
+    <tr>
+      <td>{{ fooddict['food'][row_index]|tojson|safe }}</td>
+      <td>{{ fooddict['fat'][row_index] }}</td>
+      <input type="submit" name="add" value="increment">
+    </tr>
+{% endfor %}
+
+{% endblock %}
+

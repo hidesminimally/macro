@@ -1762,3 +1762,13 @@ button, .button {
 @media only screen and (min-width: 40.063em) {
   button, .button {
     display: inline-block; } }
+
+.sidebarBox {
+  width: 600px; /* Replace with your sidebar width */
+  float: right;
+  position: relative;
+}
+.scrollingBox {
+  width: 600px; /* Replace with width as sidebar */
+}
+

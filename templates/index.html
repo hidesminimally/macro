@@ -6,6 +6,7 @@
     <title>Macro Calculator!</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='foundation.css') }}" />
     <script src="js/vendor/modernizr.js"></script>
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
   </head>
 <body>
 
@@ -17,7 +18,7 @@
 
     <div class="row">
       <div class="large-12 columns">
-        <div class="panel">
+  
           
           
        
@@ -40,8 +41,15 @@
 
  <p>
 
+{{item.get_name() }}<br>
+
+  Total Fat: {{item.get_fat()}}<br>
+  Total Carb: {{item.get_carbs()}}<br>
+  Protein: {{item.get_protein()}}<br>
+  Calories: {{item.get_calorie()}}
+
   <!-- Subtrac Function  -->
-  <button class="small round button" onclick="function subNutrients(){
+  <button class="tiny round alert button" onclick="function subNutrients(){
     if (totalFat - {{item.get_fat()}} >= 0)
       {
       totalFat -= {{item.get_fat()}}
@@ -71,15 +79,14 @@
     updateMytotalCalories();
     removeFromBasket();
   }
-  subNutrients();">Subtract</button>
+  subNutrients();">-</button>
 
 
-  {{item.get_name() }}
   
 
   <!-- Add Function -->
 
-  <button class="small round button" onclick="function addNutrients(){
+  <button class="tiny round button" onclick="function addNutrients(){
     totalFat += {{item.get_fat()}}
 
     updateMytotalFat();
@@ -98,23 +105,29 @@
     addToBasket( );
   }
   addNutrients();
-  ">Add</button></br>
+  ">+</button></br>
+
 
 
 
 
 
 </p>
+
 {% endfor %}
 
-        </div>
+     
       </div>
     </div>
 
 
-
-
+<div class="row">
+      <div class="large-12 columns">
+        <div class="sidebarBox">
+          <h3> Total So Far </h3> </br>
+          <div class="scrollingBox">
 <script type="text/javascript">
+
 document.write('<span id="totalFat"> Total Fat  = ' + totalFat + '</span><br/><br/>');
 document.write('<span id="totalProtein"> Total Protein  = ' + totalProtein + '</span><br/><br/>');
 document.write('<span id="totalCarb"> Total Carbs  = ' + totalCarb + '</span><br/><br/>');
@@ -177,13 +190,39 @@ function removeFromBasket()
 
 </script> 
 
-  <button onclick="resetAll()">Reset</button></br>
+  <button class = "small round button"  onclick="resetAll()">Reset</button></br>
 
   <p> Number of foods added so far: </p>
   <p id="basket"> None </p>
+</div>
+</div>
+</div>
+</div>
 
+<script type="text/javascript">
+$(function() {
+  // Set this variable with the desired height
+  var offsetPixels = 670; 
+
+  $(window).scroll(function() {
+    if ($(window).scrollTop() > offsetPixels) {
+      $( ".scrollingBox" ).css({
+        "position": "fixed",
+        "top": "15px"
+      });
+    } else {
+      $( ".scrollingBox" ).css({
+        "position": "relative",
+        "top": "0"
+      });
+    }
+  });
+});
+</script>
 
 </body>
+
+
 </html>
 
 <!-- Seems to be only executing the last function -->

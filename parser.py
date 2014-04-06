@@ -104,6 +104,5 @@ def create_food(url):
 
 	nut = nutrition.Food(name, fatn, fatp, carbn, carbp, protn, calo)
 	#creates a Food object that contains floats denoting fat, carbs, etc.
-
 	return nut
 	

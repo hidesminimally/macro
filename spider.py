@@ -5,6 +5,8 @@ from bs4 import BeautifulSoup
 
 """
 Scrapes data from the calDining page. Creates a list of Food objects that contain fat, protein, carbs, and calories as floats.
+Returns a tuple (foodlist, dictionary)
+Dictionary is in the form fooddict[NAME] = [fat, carbs, protein, calories]
 
 """
 #calorie_text = []
@@ -46,10 +48,8 @@ def run():
 
 						#parser.nutrition_parse currently parses the calories
 
-<<<<<<< HEAD
-	return dictFood
-=======
-	return dictFood
 
-print(run())
->>>>>>> e223ec9d092bc720ce03923995de603273e2d7e5
+	return (foodlist, dictFood)
+
+
+

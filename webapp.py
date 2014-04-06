@@ -5,8 +5,9 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-	fooddict = {}
-	foodlist = spider.run()
+	foods = spider.run()
+	foodlist = foods[0]
+	dictionary = foods[1]
 	fat_contents = []
 	food_names = []
 	for food in foodlist:

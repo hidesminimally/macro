@@ -1,36 +1,117 @@
 <html>
-  <body>
-
-{% for item in foodlist %}
-<p>
-<button onclick="myFunction()">Subtract</button>
-{{ item.get_name() }}
-<button onclick="addFunction()">Add</button>
+<body>
 
 
-    <script>
 
-      function addFunction() {
-        {{counter.fat}} += {{item.fat}}
-        {{counter.carb}} += {{item.carb}}
-        {{counter.protein}} += {{item.protein}} 
-        {{counter.calorie}} +={{item.calorie}} 
+
+ <script>
+ var totalFat = 0;
+ var totalProtein = 0; 
+ var totalCalories =0;
+ var totalCarb =0;
+ </script> 
+
+
+
+ {% for item in foodlist %}
+
+ 
+
+ <p>
+
+  <!-- Subtrac Function  -->
+  <button onclick="function subNutrients(){
+    totalFat -= {{item.get_fat()}}
+    
+    updateMytotalFat();
+    totalProtein -= {{item.get_protein()}}
+    
+    updateMytotalProtein();
+
+    totalCarb -= {{item.get_carbs()}}
+    
+    updateMytotalCarb();
+
+    totalCalories -= {{item.get_calorie()}}
+    
+    updateMytotalCalories();
+  }
+  subNutrients();">Subtract</button>
+
+
+  {{item.get_name() }}
   
 
+  <!-- Add Function -->
+  <button onclick="function addNutrients(){
+    totalFat += {{item.get_fat()}}
+    updateMytotalFat();
+    totalProtein += {{item.get_protein()}}
+    updateMytotalProtein();
+        totalCarb += {{item.get_carbs()}}
+    
+    updateMytotalCarb();
 
-      }
-    </script>
+    totalCalories += {{item.get_calorie()}}
+    
+    updateMytotalCalories();
+  }
+  addNutrients();
+  ">Add</button>
+
+
+
+
+
 </p>
 {% endfor %}
 
 
 
 
+<script type="text/javascript">
+document.write('<span id="totalFat"> Total Fat  = ' + totalFat + '</span><br/><br/>');
+document.write('<span id="totalProtein"> Total Protein  = ' + totalProtein + '</span><br/><br/>');
+document.write('<span id="totalCarb"> Total Carbs  = ' + totalCarb + '</span><br/><br/>');
+document.write('<span id="totalCalories"> Total Calories  = ' + totalCalories + '</span><br/><br/>');
+/*document.write('<input type="button" value="Add One" onclick="addOne()"/>')
 
-    <p>  counter.fat </p>
-    {{counter.fat}}
-     <p>  {{counter.carb}} </p>
-      <p>  {{counter.protein}} </p>
-       <p>  {{counter.calorie}} </p>
-  </body>
+function addOne() { 
+  x++; 
+  updateMyX(); 
+};*/
+
+
+function updateMytotalFat() {
+  document.getElementById( 'totalFat' ).innerHTML = 'updatetotalFat = '+ totalFat;
+}
+function updateMytotalProtein(){
+  document.getElementById( 'totalProtein' ).innerHTML = 'updatetotalprotein = ' + totalProtein; 
+}
+
+
+
+function updateMytotalCarb() {
+  document.getElementById( 'totalCarb' ).innerHTML = 'updatetotalCarb= '+ totalCarb;
+}
+
+function updateMytotalCalories() {
+  document.getElementById( 'totalCalories' ).innerHTML = 'updatedtotalCALORIES= '+ totalCalories;
+}
+
+function resetAll(){
+  totalFat = 0;
+  totalProtein = 0; 
+  totalCalories =0;
+  totalCarb =0;
+}
+
+</script> 
+
+  <button onclick="resetAll()">Reset</button>
+
+
+</body>
 </html>
+
+<!-- Seems to be only executing the last function -->

@@ -1,6 +1,6 @@
 
 class Counter:
-	def __init__(self, fat, fatp, carb, carbp, protein, calorie):
+	def __init__(self):
 		self.fat = 0
 		self.fatp = 0
 		self.carb = 0

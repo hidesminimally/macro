@@ -17,13 +17,14 @@ def index():
 		food_names.append(food.get_name())
 	fooddict['food'] = food_names
 	fooddict['fat'] = fat_contents
+	count = counter.Counter()
 
 
 
 
 	#x = {'date':[u'2012-06-28', u'2012-06-29', u'2012-06-30'], 'users': [405, 368, 119]}
 
-	return render_template('index.html', foodlist = foodlist, counter = counter)
+	return render_template('index.html', foodlist = foodlist, count = count)
 
 
 

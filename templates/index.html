@@ -1,7 +1,26 @@
-<html>
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Macro Calculator!</title>
+    <link rel="stylesheet" href="css/foundation.css" />
+    <script src="js/vendor/modernizr.js"></script>
+  </head>
 <body>
 
+<div class="row">
+      <div class="large-12 columns">
+        <h1>Today's Cal Dining Menu:</h1>
+      </div>
+    </div>
 
+    <div class="row">
+      <div class="large-12 columns">
+        <div class="panel">
+          
+          
+       
 
 
  <script>
@@ -21,18 +40,30 @@
 
   <!-- Subtrac Function  -->
   <button onclick="function subNutrients(){
-    totalFat -= {{item.get_fat()}}
+    if (totalFat - {{item.get_fat()}} >= 0)
+      {
+      totalFat -= {{item.get_fat()}}
+      }
+
     
     updateMytotalFat();
+    if(totalProtein - {{item.get_protein()}} >= 0)
+    {
     totalProtein -= {{item.get_protein()}}
+    }
     
     updateMytotalProtein();
 
+    if(totalCarb - {{item.get_carbs()}} >= 0)
+    {
     totalCarb -= {{item.get_carbs()}}
-    
+    }
     updateMytotalCarb();
 
+    if(totalCalories - {{item.get_calorie()}} >= 0)
+    {
     totalCalories -= {{item.get_calorie()}}
+    }
     
     updateMytotalCalories();
   }
@@ -43,7 +74,8 @@
   
 
   <!-- Add Function -->
-  <button onclick="function addNutrients(){
+
+  <a href="#" class="small round button" onclick="function addNutrients(){
     totalFat += {{item.get_fat()}}
     updateMytotalFat();
     totalProtein += {{item.get_protein()}}
@@ -57,7 +89,7 @@
     updateMytotalCalories();
   }
   addNutrients();
-  ">Add</button>
+  "; style="float:right">Add</a></br>
 
 
 
@@ -65,6 +97,10 @@
 
 </p>
 {% endfor %}
+
+        </div>
+      </div>
+    </div>
 
 
 
@@ -83,20 +119,20 @@ function addOne() {
 
 
 function updateMytotalFat() {
-  document.getElementById( 'totalFat' ).innerHTML = 'updatetotalFat = '+ totalFat;
+  document.getElementById( 'totalFat' ).innerHTML = 'TotalFat = '+ totalFat;
 }
 function updateMytotalProtein(){
-  document.getElementById( 'totalProtein' ).innerHTML = 'updatetotalprotein = ' + totalProtein; 
+  document.getElementById( 'totalProtein' ).innerHTML = 'Totalprotein = ' + totalProtein; 
 }
 
 
 
 function updateMytotalCarb() {
-  document.getElementById( 'totalCarb' ).innerHTML = 'updatetotalCarb= '+ totalCarb;
+  document.getElementById( 'totalCarb' ).innerHTML = 'TotalCarb= '+ totalCarb;
 }
 
 function updateMytotalCalories() {
-  document.getElementById( 'totalCalories' ).innerHTML = 'updatedtotalCALORIES= '+ totalCalories;
+  document.getElementById( 'totalCalories' ).innerHTML = 'TotalCalories= '+ totalCalories;
 }
 
 

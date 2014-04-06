@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Macro Calculator!</title>
-    <link rel="stylesheet" href="css/foundation.css" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='foundation.css') }}" />
     <script src="js/vendor/modernizr.js"></script>
   </head>
 <body>
@@ -28,6 +28,8 @@
  var totalProtein = 0; 
  var totalCalories =0;
  var totalCarb =0;
+ var foods = new Array();
+ var foodcount = 0;
  </script> 
 
 
@@ -39,10 +41,11 @@
  <p>
 
   <!-- Subtrac Function  -->
-  <button onclick="function subNutrients(){
+  <button class="small round button" onclick="function subNutrients(){
     if (totalFat - {{item.get_fat()}} >= 0)
       {
       totalFat -= {{item.get_fat()}}
+
       }
 
     
@@ -66,6 +69,7 @@
     }
     
     updateMytotalCalories();
+    removeFromBasket();
   }
   subNutrients();">Subtract</button>
 
@@ -75,9 +79,12 @@
 
   <!-- Add Function -->
 
-  <a href="#" class="small round button" onclick="function addNutrients(){
+  <button class="small round button" onclick="function addNutrients(){
     totalFat += {{item.get_fat()}}
+
     updateMytotalFat();
+
+    
     totalProtein += {{item.get_protein()}}
     updateMytotalProtein();
         totalCarb += {{item.get_carbs()}}
@@ -87,9 +94,11 @@
     totalCalories += {{item.get_calorie()}}
     
     updateMytotalCalories();
+
+    addToBasket( );
   }
   addNutrients();
-  "; style="float:right">Add</a></br>
+  ">Add</button></br>
 
 
 
@@ -120,6 +129,7 @@ function addOne() {
 
 function updateMytotalFat() {
   document.getElementById( 'totalFat' ).innerHTML = 'TotalFat = '+ totalFat;
+
 }
 function updateMytotalProtein(){
   document.getElementById( 'totalProtein' ).innerHTML = 'Totalprotein = ' + totalProtein; 
@@ -148,9 +158,26 @@ function resetAll(){
   document.getElementById( 'totalCalories' ).innerHTML = 'updatedtotalCALORIES= '+ totalCalories;
 }
 
+function addToBasket()
+{
+  foodcount += 1
+  var x = document.getElementById("basket");
+  x.innerHTML='' + foodcount;
+}
+
+function removeFromBasket()
+{
+  foodcount -= 1
+  var x = document.getElementById("basket");
+  x.innerHTML='' + foodcount;
+}
+
 </script> 
 
-  <button onclick="resetAll()">Reset</button>
+  <button onclick="resetAll()">Reset</button></br>
+
+  <p> Number of foods added so far: </p>
+  <p id="basket"> None </p>
 
 
 </body>

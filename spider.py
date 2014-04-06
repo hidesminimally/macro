@@ -7,10 +7,12 @@ from bs4 import BeautifulSoup
 #nutrition = {}
 
 def run():
+	dictFood={}
 	foodlist = []
 	url = "http://services.housing.berkeley.edu/FoodPro/dining/static/todaysentrees.asp"
 	urls = [url]
 	visited = [url]
+	i = 0
 
 	while len(urls) > 0:
 		try:
@@ -33,9 +35,13 @@ def run():
 						#visited.append(link['href'])
 				#information = parser.nutrition_parse(link['href'])
 				foodlist.append(parser.create_food(link['href']))
+				dictFood[foodlist[i].name] = ['Fat: ' + str(foodlist[i].fat), "Carb: " + str(foodlist[i].carb), "Protein: " + str(foodlist[i].protein), "Calories: " + str(foodlist[i].calorie)]
+				i+= 1 
 				#calorie_text.append(information[0])
 				#nutrition[information[0]] = (information[1],information[2])
 
 						#parser.nutrition_parse currently parses the calories
 
-	return foodlist
+	return dictFood
+
+print(run())

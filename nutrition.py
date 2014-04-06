@@ -6,14 +6,14 @@ from bs4 import BeautifulSoup
 class Food:
 	def __init__(self, name, fat, fatp, carb, carbp, protein, calorie):
 		self.name = name
-
-
 		self.fat = convertToFloat(fat)
 		self.fatp = convertToFloat2(fatp)
 		self.carb = convertToFloat(carb)
 		self.carbp = convertToFloat2(carbp)
 		self.protein = convertToFloat(protein)
 		self.calorie = convertToFloat2(calorie)
+
+
 
 
 
@@ -24,7 +24,8 @@ class Food:
 			print("UNICODE ERROR")
 			return "error"
 
-
+	def get_name(self):
+		return self.name
 	def get_fat(self):
 		return self.fat
 	def get_carbs(self):

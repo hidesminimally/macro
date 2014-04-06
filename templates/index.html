@@ -161,7 +161,7 @@ function updateMytotalCalories() {
 
 
 function resetAll(){
-   totalFat = 0;
+  totalFat = 0;
   totalProtein = 0; 
   totalCalories =0;
   totalCarb =0;
@@ -205,7 +205,7 @@ $(function() {
   var offsetPixels = 670; 
 
   $(window).scroll(function() {
-    if ($(window).scrollTop() > offsetPixels) {
+    if ($(window).scrollTop() >= 0) {
       $( ".scrollingBox" ).css({
         "position": "fixed",
         "top": "15px"

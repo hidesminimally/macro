@@ -1,37 +1,36 @@
+<html>
+  <body>
+
 {% for item in foodlist %}
 <p>
 <button onclick="myFunction()">Subtract</button>
 {{ item.get_name() }}
-<button onclick="myFunction()">Add</button>
-</p>
-{% endfor %}
+<button onclick="addFunction()">Add</button>
 
-<html>
-  <body>
-<<<<<<< HEAD
-    <p>Click the button to add the nutrients of (name of food) .</p>
-    <button onclick="myFunction()"> ADD </button>
-=======
 
-    <p>Click the button to calculate x.</p>
-
-    <button onclick="myFunction()">Add</button>
->>>>>>> 9431825cce3290dcefe87383907e37b292b0960f
-    <br/>
-    <!--<br/>Enter first number:-->
-    <!-- <input type="text" id="txt1" name="text1">Enter second number:
-    <input type="text" id="txt2" name="text2"> -->
-    <p id="demo"></p>
     <script>
 
-      function myFunction() {
-        var y = document.getElementById("txt1").value;
-        var z = document.getElementById("txt2").value;
-        var x = +y + {{ food}} +z;
-        document.getElementById("demo").innerHTML = x;
+      function addFunction() {
+        {{counter.fat}} += {{item.fat}}
+        {{counter.carb}} += {{item.carb}}
+        {{counter.protein}} += {{item.protein}} 
+        {{counter.calorie}} +={{item.calorie}} 
+  
 
 
       }
     </script>
+</p>
+{% endfor %}
+
+
+
+
+
+    <p>  counter.fat </p>
+    {{counter.fat}}
+     <p>  {{counter.carb}} </p>
+      <p>  {{counter.protein}} </p>
+       <p>  {{counter.calorie}} </p>
   </body>
 </html>

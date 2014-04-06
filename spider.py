@@ -51,5 +51,5 @@ def run():
 
 	return (foodlist, dictFood)
 
-print(run()[1])
+
 

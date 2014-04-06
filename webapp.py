@@ -1,5 +1,6 @@
 from flask import Flask, render_template
 import spider
+import counter 
 
 app = Flask(__name__)
 
@@ -22,7 +23,7 @@ def index():
 
 	#x = {'date':[u'2012-06-28', u'2012-06-29', u'2012-06-30'], 'users': [405, 368, 119]}
 
-	return render_template('index.html', foodlist = foodlist)
+	return render_template('index.html', foodlist = foodlist, counter = counter)
 
 
 

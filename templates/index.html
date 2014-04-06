@@ -1,6 +1,9 @@
 {% for item in foodlist %}
-
-<p>{{ item.get_fat() }}</p>
+<p>
+<button onclick="myFunction()">Subtract</button>
+{{ item.get_name() }}
+<button onclick="myFunction()">Add</button>
+</p>
 {% endfor %}
 
 <html>

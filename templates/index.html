@@ -204,10 +204,10 @@ $(function() {
   var offsetPixels = 120; 
 
   $(window).scroll(function() {
-    if ($(window).scrollTop() >= 0) {
+    if ($(window).scrollTop() >= 50) {
       $( ".scrollingBox" ).css({
         "position": "fixed",
-        "top": "15px"
+        "top": "20px"
       });
     } else {
       $( ".scrollingBox" ).css({

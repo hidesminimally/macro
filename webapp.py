@@ -19,9 +19,10 @@ def index():
 
 
 
+
 	#x = {'date':[u'2012-06-28', u'2012-06-29', u'2012-06-30'], 'users': [405, 368, 119]}
 
-	return render_template('index.html', fooddict = fooddict)
+	return render_template('index.html', foodlist = foodlist)
 
 
 

@@ -1,6 +1,6 @@
 from Tkinter import *
 import spiderlink
-
+# Not using 
 class App:
 
     def __init__(self, master):

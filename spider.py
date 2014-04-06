@@ -11,10 +11,12 @@ Scrapes data from the calDining page. Creates a list of Food objects that contai
 #nutrition = {}
 
 def run():
+	dictFood={}
 	foodlist = []
 	url = "http://services.housing.berkeley.edu/FoodPro/dining/static/todaysentrees.asp"
 	urls = [url]
 	visited = [url]
+	i = 0
 
 	while len(urls) > 0:
 		try:
@@ -44,4 +46,10 @@ def run():
 
 						#parser.nutrition_parse currently parses the calories
 
+<<<<<<< HEAD
 	return dictFood
+=======
+	return dictFood
+
+print(run())
+>>>>>>> e223ec9d092bc720ce03923995de603273e2d7e5

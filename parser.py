@@ -38,13 +38,17 @@ def create_food(url):
 	except:
 		print("Error!")
 		print(url)
+
 	soup = BeautifulSoup(htmltext)
 	strings = []
-	for text in soup.stripped_strings:
-		strings.append(text)
 
-	name = soup.find("form").get_text(strip=True)
-	name.encode()
+	#gives you beautifulsoup strings 
+	for text in soup.stripped_strings:
+		strings.append(text) 
+
+	name = soup.find("form").get_text(strip=True) # gets the name 
+	name.encode() 
+
 
 
 	fatn, fatp, carbn, carbp, protn, protp = 0, 0, 0, 0, 0, 0
@@ -100,6 +104,5 @@ def create_food(url):
 
 	nut = nutrition.Food(name, fatn, fatp, carbn, carbp, protn, calo)
 	#creates a Food object that contains floats denoting fat, carbs, etc.
-
 	return nut
 	

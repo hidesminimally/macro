@@ -18,7 +18,7 @@ def run():
 	url = "http://services.housing.berkeley.edu/FoodPro/dining/static/todaysentrees.asp"
 	urls = [url]
 	visited = [url]
-	i = 0
+	i = 1
 
 	while len(urls) > 0:
 		try:

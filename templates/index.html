@@ -16,10 +16,25 @@
       </div>
     </div>
 
-  
-          
-          
-       
+<!-- Notifies if Cal Dining is not serving today -->
+<script>
+var x=new Date();
+x.setFullYear(2014,04,17);
+var today = new Date();
+var y = new Date();
+y.setFullYear(2014,07,20);
+if (today >= x)
+  {
+    if (today <= y)
+    {
+      document.write('<center>');
+      document.write('<br>')
+      document.write("Cal Dining is not serving food today :( ");
+      document.write('</center>');
+      document.write('<br>')
+    }
+  }
+</script>
 
 
  <script>
@@ -36,8 +51,6 @@
 <div class="row">
   <div class="large-8 columns">
  {% for item in foodlist %}
-
-
 
  <p>
 
@@ -108,20 +121,15 @@
   addNutrients();
   ">+</button></br>
 
-
-
-
-
-
 </p>
 
 
 {% endfor %}
 </div>
 
+
+
     <div class="large-4 columns">
-
-
         <div class="sidebarBox">
           <div class="scrollingBox">
 <script type="text/javascript">
@@ -130,12 +138,6 @@ document.write('<span id="totalFat"> Total Fat  = ' + totalFat + '</span><br/><b
 document.write('<span id="totalProtein"> Total Protein  = ' + totalProtein + '</span><br/><br/>');
 document.write('<span id="totalCarb"> Total Carbs  = ' + totalCarb + '</span><br/><br/>');
 document.write('<span id="totalCalories"> Total Calories  = ' + totalCalories + '</span><br/><br/>');
-/*document.write('<input type="button" value="Add One" onclick="addOne()"/>')
-
-function addOne() { 
-  x++; 
-  updateMyX(); 
-};*/
 
 
 function updateMytotalFat() {
@@ -198,6 +200,7 @@ function removeFromBasket()
 </div>
 
 
+
 <script type="text/javascript">
 $(function() {
   // Set this variable with the desired height
@@ -218,6 +221,8 @@ $(function() {
   });
 });
 </script>
+
+
 
 </body>
 
